@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #080915;
+  --primary: #1A1635;
+  --main-blue: #0A8BEC;
+  --main-orange: #F5A100;
+  --main-green: #02D169;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-main-blue: var(--main-blue);
+  --color-main-orange: var(--main-orange);
+  --color-main-green: var(--main-green);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  h1 {
+    @apply text-[36px];
+  }
+
+  button {
+    @apply cursor-pointer transition-all duration-300 ease-in-out;
+  }
+
+  .active-option-btn {
+    @apply bg-primary;
+  }
+
+}
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+@utility display-none {
+  display: none;
+}
+
+@utility table-line {
+  @apply relative before:content-[''] before:w-full before:h-[1px] before:absolute  before:bg-[linear-gradient(90deg,rgba(106,33,244,0)_0%,rgba(106,33,244,0.87)_49%,rgba(106,33,244,1)_100%)] before:z-5 before:bottom-0;
+}
+
+@utility results-table-row {
+  @apply w-full display-none sm:grid gap-4 grid-cols-[minmax(min-content,100px)_minmax(min-content,100px)_minmax(min-content,100px)_minmax(min-content,4fr)_minmax(min-content,100px)_minmax(min-content,100px)__minmax(min-content,100px)_auto] py-6 justify-between;
+}
+
+@utility results-table-heading {
+  @apply w-full display-none sm:grid gap-4 grid-cols-[minmax(min-content,100px)_minmax(min-content,100px)_minmax(min-content,100px)_minmax(min-content,4fr)_minmax(min-content,100px)_minmax(min-content,100px)__minmax(min-content,100px)_auto] py-6 justify-between;
+}
+
+@utility live-table-heading {
+  @apply display-none sm:flex flex-row-reverse gap-30;
+}
+
+@utility tab-wrapper {
+  @apply justify-between border-b border-gray-800 mt-10 text-[20px];
+}
+
+@utility mobile-row-wrapper {
+  @apply bg-primary w-full p-4 sm:display-none rounded-lg;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #080915;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Helvetica N, sans-serif;
+}
+
+.swiper-wrapper {
+  display: flex !important;
+}

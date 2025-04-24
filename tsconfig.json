@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",               // ← make “.” the root
+    "paths": {
+      "@/*": ["src/*"]            // ← map @/foo → src/foo
+    },
+    "jsx": "react-jsx",           // ← you already have this
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "vite.config.ts"]
+}
